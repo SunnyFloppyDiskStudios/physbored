@@ -43,7 +43,7 @@ let runner;
 // functions
 function createSimulation() {
     // world creation funciton
-    
+
     // engine & renderer
     engine = Engine.create();
 
