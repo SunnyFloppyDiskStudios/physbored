@@ -13,7 +13,7 @@ function pathToVertices(path, samples = 40) {
     let length = path.getTotalLength();
     let verts = [];
 
-    for (let i = 0; i < samples; i++) {
+    for (let i = 0; i <= samples; i++) {
         let point = path.getPointAtLength(
             (i / samples) * length
         );
@@ -70,12 +70,13 @@ function createSimulation() {
 
     // world
     let ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight + 30, window.innerWidth, 60, { isStatic: true });
+    let roof = Bodies.rectangle(window.innerWidth / 2, -30, window.innerWidth, 60, { isStatic: true });
     let wallLeft = Bodies.rectangle(-30, window.innerHeight / 2, 60, window.innerHeight * 2, { isStatic: true });
     let wallRight = Bodies.rectangle(window.innerWidth + 30, window.innerHeight / 2, 60, window.innerHeight * 2, { isStatic: true });
 
 
     // making it all add up
-    Composite.add(engine.world, [ground, wallLeft, wallRight]);
+    Composite.add(engine.world, [ground, wallLeft, wallRight, roof]);
     Composite.add(engine.world, createdBoreds.map(bored => bored.body));
 
     // Render.run(render); // RENDERS A CANVAS DELETE IF NOT IN USE ME PLEASE REMMEBER TO REMOVE THIS LATER THIS IS A HUGE COMMENT SO IT STICKS OUT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -110,7 +111,8 @@ function addBored() {
     // the borederiser
 
     let randPosX = Math.random() * window.innerWidth;
-    let randPosY = Math.random() * window.innerHeight;
+    // let randPosY = Math.random() * window.innerHeight;
+    let randPosY = 50;
 
     let randScale = Math.max(Math.random() * 300, 50);
 
