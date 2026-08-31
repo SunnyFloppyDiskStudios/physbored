@@ -7,6 +7,9 @@ function debounce(func){
 }
 
 function pathToVertices(path, samples = 40) {
+    // replacement for the broken matterJS functionality
+    // derived from stackoverflow posts mainly
+
     let length = path.getTotalLength();
     let verts = [];
 
@@ -40,6 +43,7 @@ let runner;
 // functions
 function createSimulation() {
     // world creation funciton
+    
     // engine & renderer
     engine = Engine.create();
 
