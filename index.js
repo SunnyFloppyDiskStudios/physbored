@@ -1,5 +1,5 @@
 function debounce(func){
-    var timer;
+    let timer;
     return function(event){
         if(timer) clearTimeout(timer);
         timer = setTimeout(func,100,event);
@@ -25,7 +25,7 @@ function pathToVertices(path, samples = 40) {
 }
 
 // module aliases
-var Engine = Matter.Engine,
+let Engine = Matter.Engine,
     // Render = Matter.Render,
     Runner = Matter.Runner,
     Bodies = Matter.Bodies,
@@ -113,8 +113,6 @@ function addBored() {
     let randPosY = Math.random() * window.innerHeight;
 
     let randScale = Math.max(Math.random() * 300, 50);
-
-    let randRotation = Math.random() * Math.PI;
 
     let oDiv = document.createElement("div");
     oDiv.style.position = "absolute";
