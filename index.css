@@ -3,3 +3,12 @@
     margin: 0;
     overscroll-behavior: none;
 }
+
+html {
+    background: #fff;
+}
+
+canvas {
+    position: absolute;
+    z-index: -1;
+}
